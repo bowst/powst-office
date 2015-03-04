@@ -1,0 +1,22 @@
+{
+  "name": "powst-office",
+  "version": "0.0.1",
+  "description": "A simple mailcatcher app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bowst/powst-office.git"
+  },
+  "author": "Drew Trafton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bowst/powst-office/issues"
+  },
+  "homepage": "https://github.com/bowst/powst-office",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-bundle-assets": "^2.19.0",
+    "gulp-inject": "^1.2.0",
+    "gulp-react": "^3.0.0",
+    "lazypipe": "^0.2.2"
+  }
+}
