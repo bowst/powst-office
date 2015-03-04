@@ -1,6 +1,6 @@
 var App = React.createClass({
   getInitialState: function() {
-    return {selected: 0};
+    return {selected: emails[0].id};
   },
   setSelected: function(id){
     this.setState({
@@ -21,7 +21,7 @@ var App = React.createClass({
               </h2>
             </div>
           </div>
-        </div>        
+        </div>
         <div className="inbox">
           <Inbox setSelected={this.setSelected} selected={this.state.selected} />
         </div>
@@ -48,7 +48,7 @@ var Inbox = React.createClass({
     var sortedEmails = [];
     if(sortBy == "Timestamp"){
       sortedEmails = _.sortBy(emails, function(email){
-        var stamp = moment.utc(email.timeStamp);
+        var stamp = moment.utc(email.sent);
         return ascending ? stamp : stamp * -1;
       });
     }else{
@@ -103,8 +103,8 @@ var Inbox = React.createClass({
 var Row = React.createClass({
   render: function(){
     //timestamp display logic
-    var isToday = moment(this.props.email.timeStamp).isSame(new Date(), "day");
-    var timeStamp = moment(this.props.email.timeStamp);
+    var isToday = moment(this.props.email.sent).isSame(new Date(), "day");
+    var timeStamp = moment(this.props.email.sent);
     var display = isToday ? timeStamp.format("h:mm:ss a") : timeStamp.format("M/D/YYYY h:mm:ss a");
     //set classes
     var cx = React.addons.classSet;
@@ -120,7 +120,7 @@ var Row = React.createClass({
           {display}
         </div>
         <div className="four wide column">
-          {this.props.email.to}
+          {this.props.email.to_email}
         </div>
         <div className="eight wide column">
           {this.props.email.subject}

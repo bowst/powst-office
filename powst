@@ -3,21 +3,18 @@
 <?php
 
 require 'vendor/autoload.php';
+include_once 'db.php';
 
 $input = file_get_contents('php://stdin');
 //get info
 $email = new PlancakeEmailParser($input);
 
-$servername = 'localhost';
-$username = 'powst_user';
-$password = 'password';
-
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=powst_office", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //Connected successfully, let's insert
-    $sql = 'INSERT INTO mail (to_email,subject,content) VALUES (:to,:subject,:content)';
+    $sql = "INSERT INTO $table (to_email,subject,content) VALUES (:to,:subject,:content)";
     $q = $conn->prepare($sql);
     $q->bindParam(':to', implode(";",  $email->getTo()));
     $q->bindParam(':subject', $email->getSubject());
