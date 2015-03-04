@@ -15,7 +15,7 @@ module.exports = {
       ],
       options: {
         rev: false,
-        uglify: false,
+        uglify: true,
         transforms: {
           scripts: precompileReact 
         },
@@ -24,14 +24,14 @@ module.exports = {
     },
     vendor: {
       scripts: [
-        './bower_components/jquery/dist/jquery.js',
-        './bower_components/lodash/lodash.js',
-        './bower_components/moment/moment.js',
-        './bower_components/moment/moment.js',
-        './bower_components/react/react-with-addons.js',
+        './app/bower_components/jquery/dist/jquery.js',
+        './app/bower_components/lodash/lodash.js',
+        './app/bower_components/moment/moment.js',
+        './app/bower_components/semantic-ui/dist/semantic.js',
+        './app/bower_components/react/react-with-addons.js',
       ],
       styles: [
-        './bower_components/semantic-ui/dist/semantic.css'
+        './app/bower_components/semantic-ui/dist/semantic.css'
       ],
       options: {
         maps: false
@@ -41,12 +41,20 @@ module.exports = {
   copy: [
     {
       src: [
-        './bower_components/semantic-ui/dist/themes/**/*'
+        './app/bower_components/semantic-ui/dist/themes/**/*'
       ],
-      base: './bower_components/semantic-ui/dist/' 
+      base: './app/bower_components/semantic-ui/dist/' 
     },
-    './app/db.php',
-    './app/emails.php',
-    './app/vendor'
+    {
+      src:[
+        './app/db.php',
+        './app/emails.php',
+        './app/index.php',
+        './app/test.html',
+        './app/img/*'
+      ],
+      base: './app/'
+    }
+    
   ]
 };

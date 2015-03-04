@@ -13,7 +13,7 @@ var App = React.createClass({
         <div className="ui grid">
           <div className="column row equal height">
             <div className="two wide column">
-              <img className="logo" src="app/img/logo.png" /> 
+              <img className="logo" src="img/logo.png" /> 
             </div>
             <div className="fourteen wide column">
               <h2>
@@ -38,13 +38,13 @@ var Inbox = React.createClass({
   getInitialState: function(){
     return{
       sortBy: "Timestamp",
-      ascending: true,
+      ascending: false,
       emails: emails
     }
   },
   setSort: function(sortBy){
     //now do logic and set state
-    var ascending = sortBy == this.state.sortBy ? !this.state.ascending : this.state.ascending;
+    var ascending = (sortBy == this.state.sortBy ? !this.state.ascending : true);
     var sortedEmails = [];
     if(sortBy == "Timestamp"){
       sortedEmails = _.sortBy(emails, function(email){
@@ -75,7 +75,7 @@ var Inbox = React.createClass({
       );
     }, this);
     //now create the component
-    var sortIcon = this.state.ascending ? (<i className="sort ascending icon"></i>) : (<i className="sort descending icon"></i>);
+    var sortIcon = this.state.ascending ? (<i className="caret up icon"></i>) : (<i className="caret down icon"></i>);
     return (
       <div>
         <div className="ui selection celled list top">
@@ -83,8 +83,8 @@ var Inbox = React.createClass({
             <div className="four wide column" onClick={this.setSort.bind(null, "Timestamp")}>
               <div className="header">Timestamp {this.state.sortBy == "Timestamp" ? sortIcon : ""}</div>
             </div>
-            <div className="four wide column" onClick={this.setSort.bind(null, "to")}>
-              <div className="header">To {this.state.sortBy == "to" ? sortIcon : ""}</div>
+            <div className="four wide column" onClick={this.setSort.bind(null, "to_email")}>
+              <div className="header">To {this.state.sortBy == "to_email" ? sortIcon : ""}</div>
             </div>
             <div className="eight wide column" onClick={this.setSort.bind(null, "subject")}>
               <div className="header">Subject {this.state.sortBy == "subject" ? sortIcon : ""}</div>
@@ -105,7 +105,7 @@ var Row = React.createClass({
     //timestamp display logic
     var isToday = moment(this.props.email.sent).isSame(new Date(), "day");
     var timeStamp = moment(this.props.email.sent);
-    var display = isToday ? timeStamp.format("h:mm:ss a") : timeStamp.format("M/D/YYYY h:mm:ss a");
+    var display = isToday ? timeStamp.format("h:mm a") : timeStamp.format("M/D/YYYY h:mm a");
     //set classes
     var cx = React.addons.classSet;
     var classes = cx({

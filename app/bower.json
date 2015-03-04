@@ -19,6 +19,7 @@
   "dependencies": {
     "semantic-ui": "~1.10.4",
     "react": "~0.12.2",
-    "moment": "~2.9.0"
+    "moment": "~2.9.0",
+    "lodash": "~3.3.1"
   }
 }
