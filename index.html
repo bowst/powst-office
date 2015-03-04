@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Powst Office</title>
+    <link rel="icon" href="favicon.ico">
+    <script type="text/javascript">
+      var emails = [
+        {id: 0, to: "test@test.com", timeStamp: new Date(2011, 1, 1), subject: "test0", body: "Here is the email content0"},
+        {id: 1, to: "test@test.com", timeStamp: new Date(2012, 1, 1, 1), subject: "test1", body: "Here is the email content1"},
+        {id: 2, to: "test@test.com", timeStamp: new Date(2013, 1, 1), subject: "test2", body: "Here is the email content2"},
+        {id: 3, to: "test@test.com", timeStamp: new Date(2014, 1, 1, 1), subject: "test3", body: "Here is the email content3"},
+        {id: 4, to: "test@test.com", timeStamp: new Date(2015, 1, 1), subject: "test4", body: "<br/><br/><h1>Here is the email content4.</h1>"},
+        {id: 5, to: "test@test.com", timeStamp: new Date(2011, 1, 1, 1), subject: "test0", body: "Here is the email content0"},
+        {id: 6, to: "test@test.com", timeStamp: new Date(2012, 1, 1), subject: "test1", body: "Here is the email content1"},
+        {id: 7, to: "test@test.com", timeStamp: new Date(2013, 1, 1, 1), subject: "test2", body: "Here is the email content2"},
+        {id: 8, to: "test@test.com", timeStamp: new Date(2014, 1, 1), subject: "test3", body: "Here is the email content3"},
+        {id: 9, to: "test@test.com", timeStamp: new Date(2015, 1, 1, 1), subject: "test4", body: "<br/><br/><h1>Here is the email content4.</h1>"}
+      ];
+    </script>
+    <link type="text/css" rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.css"></link>
+    <link type="text/css" rel="stylesheet" href="app/css/main.css"></link>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/semantic-ui/dist/semantic.js"></script>
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+    <!--React Components -->
+    <script type="text/jsx" src="app/components/app.js"></script>
+  </head>
+  <body>
+  <div class="ui page one column grid vertically padded">
+    <div class="column" id="app">
+    </div>
+  </div>
+  </body>
+</html>

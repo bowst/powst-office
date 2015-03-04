@@ -1,0 +1,14 @@
+{
+    "name": "bowst/powst-office",
+    "description": "A lightweight mailcatcher for testing php applications.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Drew",
+            "email": "drew@bowst.com"
+        }
+    ],
+    "require": {
+      "floriansemm/official-library-php-email-parser": "dev-master"
+    }
+}
