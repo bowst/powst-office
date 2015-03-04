@@ -41,10 +41,12 @@ module.exports = {
   copy: [
     {
       src: [
-        './bower_components/semantic-ui/dist/components/',
-        './bower_components/semantic-ui/dist/themes/'
+        './bower_components/semantic-ui/dist/themes/**/*'
       ],
       base: './bower_components/semantic-ui/dist/' 
-    }
+    },
+    './app/db.php',
+    './app/emails.php',
+    './app/vendor'
   ]
 };

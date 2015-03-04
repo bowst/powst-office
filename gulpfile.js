@@ -15,7 +15,7 @@ gulp.task('bundle', function(cb) {
 });
 
 gulp.task('index', function(){
-  var target = gulp.src('./dist/index.php');
+  var target = gulp.src(['./dist/index.php', './dist/test.html']);
     // It's not necessary to read the files (will speed up things), we're only after their paths: 
     var sources = gulp.src(['./dist/*.js', './dist/*.css'], {read: false});
     return target.pipe(inject(sources))
