@@ -1,7 +1,7 @@
 {
   "main": {
-    "scripts": "<script src='main.js' type='text/javascript'></script>",
-    "styles": "<link href='main.css' media='all' rel='stylesheet' type='text/css'/>"
+    "styles": "<link href='main.css' media='all' rel='stylesheet' type='text/css'/>",
+    "scripts": "<script src='main.js' type='text/javascript'></script>"
   },
   "vendor": {
     "scripts": "<script src='vendor-9c391683.js' type='text/javascript'></script>",

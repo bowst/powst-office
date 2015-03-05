@@ -2,7 +2,9 @@
 var gulp = require('gulp'),
   bundle = require('gulp-bundle-assets'),
   inject = require('gulp-inject'),
-  series = require('stream-series');
+  series = require('stream-series'),
+  livereload = require('gulp-livereload'),
+  webserver = require('gulp-webserver');;
  
 gulp.task('bundle', function() {
     return gulp.src('./bundle.config.js')
@@ -21,3 +23,19 @@ gulp.task('index', ['bundle'], function(){
 });
 
 gulp.task('build', ['bundle', 'index']);
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch(['app/**/*', '!app/bower_components/**', 'bundle.config.js'], ['build']);
+});
+
+gulp.task('serve', ['watch'], function() {
+  gulp.src('dist')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: true,
+      port: 7337,
+      fallback: "test.html"
+    }));
+});
