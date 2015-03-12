@@ -83,10 +83,10 @@ var Inbox = React.createClass({
             <div className="four wide column" onClick={this.setSort.bind(null, "Timestamp")}>
               <div className="header">Timestamp {this.state.sortBy == "Timestamp" ? sortIcon : ""}</div>
             </div>
-            <div className="four wide column" onClick={this.setSort.bind(null, "to_email")}>
+            <div className="five wide column" onClick={this.setSort.bind(null, "to_email")}>
               <div className="header">To {this.state.sortBy == "to_email" ? sortIcon : ""}</div>
             </div>
-            <div className="eight wide column" onClick={this.setSort.bind(null, "subject")}>
+            <div className="seven wide column" onClick={this.setSort.bind(null, "subject")}>
               <div className="header">Subject {this.state.sortBy == "subject" ? sortIcon : ""}</div>
             </div>
           </div>
@@ -119,10 +119,10 @@ var Row = React.createClass({
         <div className="four wide column">
           {display}
         </div>
-        <div className="four wide column">
+        <div className="five wide column">
           {this.props.email.to_email}
         </div>
-        <div className="eight wide column">
+        <div className="seven wide column">
           {this.props.email.subject}
         </div>
       </div>

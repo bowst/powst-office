@@ -24,16 +24,14 @@ gulp.task('index', ['bundle'], function(){
                  .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('tarball', function () {
-    return gulp.src('./dist/**')
+gulp.task('release', ['build'], function () {
+    return gulp.src('./dist/**/*')
         .pipe(tar('powst.tar'))
         .pipe(gzip())
         .pipe(gulp.dest('./'));
 });
 
 gulp.task('build', ['bundle', 'index']);
-
-gulp.task('release', ['build', 'tarball']);
 
 gulp.task('watch', function() {
   livereload.listen();

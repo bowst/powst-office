@@ -22,5 +22,5 @@ try {
     $q->execute();
 }catch(PDOException $e){
   //future error handling
-  file_put_contents('error.log', print_r($e), FILE_APPEND);
+  file_put_contents(__DIR__ . 'error.log', print_r($e), FILE_APPEND);
 }

@@ -8,7 +8,7 @@
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //Connected successfully, let's get what we need
-        $sql = "SELECT * FROM $table ORDER BY sent";
+        $sql = "SELECT * FROM $table ORDER BY sent desc";
         $statement = $conn->prepare($sql);
         $statement->execute();
         //get emails as associative array_change_key_case
