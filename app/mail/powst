@@ -18,7 +18,7 @@ try {
     $q = $conn->prepare($sql);
     $q->bindParam(':to', implode(";",  $email->getTo()));
     $q->bindParam(':subject', $email->getSubject());
-    $q->bindParam(':content', $email->getPlainBody());
+    $q->bindParam(':body', $email->getPlainBody());
     $q->execute();
 }catch(PDOException $e){
   //future error handling

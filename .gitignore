@@ -4,3 +4,5 @@ node_modules
 bower_components
 mail/vendor/
 mail/composer.lock
+powst.tar.gz
+dist/

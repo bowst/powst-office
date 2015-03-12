@@ -10,7 +10,7 @@
         //Connected successfully, let's get what we need
         $sql = "SELECT * FROM $table ORDER BY sent";
         $statement = $conn->prepare($sql);
-        $statement->execute();cd powst
+        $statement->execute();
         //get emails as associative array_change_key_case
         $emails = $statement->fetchAll(PDO::FETCH_ASSOC);
         //output it to the page          

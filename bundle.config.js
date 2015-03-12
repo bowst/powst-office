@@ -51,6 +51,7 @@ module.exports = {
         './app/emails.php',
         './app/index.php',
         './app/test.html',
+        './app/test.php',
         './app/img/*',
         './app/mail/*'
       ],
